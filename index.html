@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnfixedStar System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --main-color: #00ff41; /* マトリックス・グリーン */
+            --bg-color: #0d0d0d;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--main-color);
+            font-family: 'Share Tech Mono', monospace;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-shadow: 0 0 5px var(--main-color); /* 文字を発光させる */
+        }
+
+        /* 画面全体を覆うコンテナ */
+        .container {
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid var(--main-color);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 90%;
+            width: 400px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* リンクボタンのデザイン */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: var(--bg-color);
+            background-color: var(--main-color);
+            padding: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ホバー時の動き */
+        a:hover {
+            background-color: #fff;
+            box-shadow: 0 0 20px #fff;
+            transform: scale(1.02);
+        }
+
+        /* ▼▼▼ ここからエフェクト（ブラウン管風） ▼▼▼ */
+        .crt::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 10;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none; /* クリックを邪魔しない */
+        }
+        
+        /* 点滅するカーソル */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.5rem;
+            background-color: var(--main-color);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="crt">
+    
+</body>
+</html>
